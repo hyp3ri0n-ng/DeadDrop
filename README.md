@@ -37,7 +37,7 @@ Activate your favorite virtualenv e.g..
 
 `$ source dropenv/bin/activate`
 
-`$ git clone git+https://github.com/acaceres2176/DeadDrop.git`
+`$ git clone https://github.com/acaceres2176/DeadDrop.git`
 
 That's it!
 
