@@ -1,15 +1,15 @@
 Platform
 ========
 
-To be a dropchat server host requires a Linux machine (any Linux should do), if this gets more popular we will create one for Windows.
+To be a DeadDrop server host requires a Linux, Mac, or Windows machine.
 
-To be a dropchat client requires a Tor Browser on any OS.
+To be a DeadDrop client requires a Tor Browser on any OS.
 
 
 Install
 =======
 
-Install Tor
+Install Tor and open Tor Browser Bundle (or the tor client daemon)
 
 Activate your favorite virtualenv e.g..
 
@@ -19,25 +19,32 @@ Activate your favorite virtualenv e.g..
 
 `$ source dropenv/bin/activate`
 
-`$ pip install git+https://gitlab.com/hyperion-gray/dropchat.git`
+`$ git clone git+https://github.com/acaceres2176/DeadDrop.git`
 
 That's it!
 
 How it works
 ============
 
-Dropchat is a disposable mini-chat server that can be used to chat safely and anonymously through Tor. One
+DeadDrop is a disposable mini-chat server that can be used to chat safely and anonymously through Tor. It is
+very similar to DropChat, but with a better user experience (no more page reloading at all times here). One
 person is the host of the chat server (don't worry being a host only requires one command - no messing with
 complex config files) and the others are the clients using only a Tor Browser. The host starts the server 
 and shares a URL with the clients. They can then chat with each other safely and anonymously. Once you're 
-done sharing the info you want, simply kill the server. No information is stored on disk.
+done sharing the info you want, simply kill the server. No information is stored on disk. There is a RAM
+clear script that you can run (if you're on Linux, or possibly Mac) that will clear your RAM for further
+safety of your information.
+
+JAVASCRIPT MUST BE ENABLED TO USE DEADDROP. Sorry for shouting, but it is an important difference from our
+prior project, dropchat and may cause confusion. This was a hard decision, if you want to complain to me
+please do so on Twitter, I'm @_hyp3ri0n.
 
 Usage
 =====
 
 Start Tor or Tor Browser, make sure your Control Port is open and listening on the default port.
 
-`$ dropchat`
+`$ python runserver.py`
 
 Share the drop URL with your friends to open in Tor Browser. Chat with them safely and securely!
 
@@ -54,6 +61,7 @@ Features
 - Randomized usernames - this is for your own safety, so as to decrease chances of username reuse
 - New chat service created every time the server is started
 - No frills, no fancy CSS, code is easy to follow and review to ensure your safety
+- A clear RAM script for use after a DeadDrop session
 
 ---
 
