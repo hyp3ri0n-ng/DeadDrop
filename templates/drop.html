@@ -1,0 +1,59 @@
+<!doctype html>
+<title>Your Drop</title>
+<head>
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+<script src="{{ url_for('static', filename='jquery.js') }}"></script> 
+</head>
+
+<style>
+  *{
+    padding-top:3px;
+    font-family: Lucida Sans Typewriter,Lucida Console,monaco,Bitstream Vera Sans Mono,monospace;
+    font-size:22px;
+  }
+</style>
+
+<script>
+function doPoll() {
+  $( document ).ready(function() {
+    $.ajax({
+      url : '{{ path }}/chats',
+      type : 'GET',
+      dataType:'json',
+      success : function(data) {
+            //alert('Data: '+ JSON.stringify(data));
+            $("#chatf").html("");
+            for(var i = 0; i < data.length; i++) {
+	      var obj = data[i];
+              var color1 = JSON.stringify(obj.color[0]);
+              var color2 = JSON.stringify(obj.color[1]);
+              var color3 = JSON.stringify(obj.color[2]);
+	      $("#chatf").append('<tr>' + '<td name="msg" class="msg"><b>' + obj.username + ': ' + obj.msg  + '</b></td>');
+          }
+	  setTimeout(doPoll,3000);
+
+      },
+      error : function(request,error) {
+              alert("There was an error. Request: "+JSON.stringify(request));
+      }
+    });
+  });
+};
+doPoll();
+</script>
+
+
+<div id="welcome">Welcome to drop {{ hostname }}<br />
+  Share the <a href="/{{ path }}">drop URL</a> with your friends to chat with them. Do not share it publicly.<br />
+</div>
+
+<div id="chatf" style="overflow: auto; width:90vw; height:90vh;">
+  <!--<iframe src="/{{path}}/chats" name="chatframe" style="width:90vw; height:90vh;" frameBorder=0></iframe>-->
+</div>
+
+<div style="position: fixed; bottom: 5px;">
+  <form id="deadform" action="/{{ path }}/chats" method="POST">
+    <input type="text" placeholder="Type your message here and press enter..." name="dropdata" style="width:90vw; height:40px;" autofocus required> 
+    <input type="submit" value="Send" style="margin-top:5px; float:right; display:none;">
+  </form>
+</div>
