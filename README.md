@@ -37,7 +37,9 @@ safety of your information.
 
 JAVASCRIPT MUST BE ENABLED TO USE DEADDROP. Sorry for shouting, but it is an important difference from our
 prior project, dropchat and may cause confusion. This was a hard decision, if you want to complain to me
-please do so on Twitter, I'm @_hyp3ri0n.
+please do so on Twitter, I'm @_hyp3ri0n. If you really hate JS, use https://github.com/HyperionGray/dropchat
+it is a very similar project, but requires no JS. The user experience kind of sucks, but it is also
+very safe to use.
 
 Usage
 =====
