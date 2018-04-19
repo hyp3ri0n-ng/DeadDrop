@@ -1,3 +1,21 @@
+Javascript
+==========
+
+DeadDrop requires Javascript to be enabled to work. If you're looking for a private messenger that does not
+require JS check out DropChat https://github.com/HyperionGray/dropchat. It is far more limited and annoying
+to use than DeadDrop. The reason we need JS in DeadDrop are the following:
+
+- User experience. If you can't use something easily and non-annoyingly no one will use it
+- More complex functionality is on its way
+- It's a low risk - enabling JS in a chat with someone you trust is much lower than say a website you don't trust
+
+Could I use another protocol like Ricochet? Yes. But it would require an external client for everyone. It's an odd
+truth that people will trust (reasonably) large, complex codebases like Ricochet, but not JS in a browser hardened
+against JS attacks! Our goal is clientless here, we want Tor Browser to be your client. Period.
+
+For these reasons I've made the decision to require JS for this. If you hate this or don't mind it I really would
+like to hear from you on Twitter, I'm @\_hyp3ri0n
+
 Platform
 ========
 
@@ -54,7 +72,6 @@ Features
 ========
 
 - As chat happens inside the Tor network via ephemeral hidden services, everything is encrypted and attribution of chatters is virtually impossible
-- No JS required, use safely with NoScript
 - *Nothing* touches disk, everything happens in-memory
 - No configuration required
 - Low barrier to entry, few dependencies
