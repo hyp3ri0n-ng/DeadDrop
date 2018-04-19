@@ -1,4 +1,4 @@
-Javascript
+eJavascript
 ==========
 
 DeadDrop requires Javascript to be enabled to work. If you're looking for a private messenger that does not
